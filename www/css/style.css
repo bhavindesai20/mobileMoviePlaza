@@ -1,0 +1,37 @@
+/* Empty. Add your own CSS if you like */
+
+.mainPanel{
+  background:#808080;
+  background: -webkit-linear-gradient(left,#e6e6e6, #cccccc);
+  background: -o-linear-gradient(right,#e6e6e6, #cccccc);
+  background: -moz-linear-gradient(right,#e6e6e6, #cccccc);
+  background: linear-gradient(to right,#e6e6e6, #cccccc);
+}
+
+.sortmmTitles{
+  width:90%;
+  margin:0 auto;
+}
+
+.sortmmTitles .button{
+    font-size:14px;
+}
+
+.mmtitles
+{
+  border:2px solid #b3b3b3;
+  padding-top:8px;
+}
+
+.mmtitles .item p{
+  font-size:17px;
+  font-weight: 600;
+}
+
+.mmtitles img.homeTitle{
+  height:280px;
+  padding-left:10px;
+  padding-right: 10px;
+}
+
+

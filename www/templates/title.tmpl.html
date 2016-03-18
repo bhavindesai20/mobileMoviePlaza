@@ -1,0 +1,39 @@
+<ion-view view-title="Title">
+  <ion-content class="mainPanel">
+
+    <div class="list card">
+      <div class="item item-avatar">
+        <img class="full-image" ng-src="{{titleCtrl.title.poster}}"/>
+        <h2>{{titleCtrl.title.title}}</h2>
+        <p>November 05, 1955</p>
+      </div>
+      <div class="item item-body">
+        <img class="full-image" ng-src="{{titleCtrl.title.poster}}"/>
+        <p>{{titleCtrl.title.plot}}</p>
+        <p>
+          <strong>MovieFliX Rating: </strong>
+          <uib-rating ng-model="titleCtrl.rate" max="5" read-only="true"></uib-rating>
+        </p>
+      </div>
+
+    </div>
+
+
+
+
+
+    <!-- comments -->
+    <div class="titleComments">
+      <div class="card" ng-repeat="comment in titleCtrl.setComments">
+        <div class="item item-divider">
+          <i class="ion-person"></i> {{comment.user.firstName}}
+        </div>
+        <div class="item item-text-wrap">
+          {{comment.comments}}
+        </div>
+      </div>
+    </div>
+    <!-- end-of-comment -->
+
+  </ion-content>
+</ion-view>

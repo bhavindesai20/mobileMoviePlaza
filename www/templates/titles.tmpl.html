@@ -1,0 +1,42 @@
+<ion-view view-title="Titles">
+  <ion-content class="mainPanel">
+
+    <ion-refresher
+      pulling-text="Pull to refresh..."
+      on-refresh="titlesCtrl.doRefresh()">
+    </ion-refresher>
+
+    <div class="list list-inset">
+      <label class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="text" placeholder="Search" ng-model="titlesCtrl.searchTitle">
+      </label>
+    </div>
+
+    <div class="button-bar sortmmTitles">
+      <a class="button" ng-click="titlesCtrl.sortTitle(titlesCtrl.sortType.Year)">Year</a>
+      <a class="button" ng-click="titlesCtrl.sortTitle(titlesCtrl.sortType.imdbRating)">ImDbRating</a>
+      <a class="button" ng-click="titlesCtrl.sortTitle(titlesCtrl.sortType.imdbVotes)">ImDBVotes</a>
+    </div>
+
+
+    <div class="list card mmtitles" ng-repeat="title in titlesCtrl.titles | filter:titlesCtrl.searchTitle | limitTo:titlesCtrl.numberOfItemsToDisplay">
+      <div class="item item-body">
+        <img class="full-image homeTitle" ng-src="{{title.poster}}" ng-click="titlesCtrl.setTitle(title.id)">
+        <p>
+          {{title.title}} - {{title.year}}
+        </p>
+        <p class=""><strong>IMDB - </strong>
+          Rating - {{title.imdbRating}} , Vote - {{title.imdbVotes}}
+        </p>
+      </div>
+    </div>
+
+    <ion-infinite-scroll
+      on-infinite="titlesCtrl.addMoreItem()"
+      ng-if="titlesCtrl.moreDataCanBeLoaded()"
+      distance="1%">
+    </ion-infinite-scroll>
+
+  </ion-content>
+</ion-view>
