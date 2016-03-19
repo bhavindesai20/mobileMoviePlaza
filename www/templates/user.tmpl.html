@@ -1,0 +1,74 @@
+<ion-modal-view>
+
+  <ion-header-bar class="bar-positive">
+    <h1 class="title">Login/Register</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="homeCtrl.closeUserModel()">
+        <i class="ion-close"></i>
+      </button>
+    </div>
+  </ion-header-bar>
+
+
+  <ion-content>
+
+    <div class="card userLRCard">
+      <div class="item item-divider formDividerTitle">
+        Login
+      </div>
+      <div class="item item-text-wrap">
+
+        <form ng-submit="homeCtrl.doLogin()">
+          <div class="list list-inset">
+            <label class="item item-input">
+              <input type="email" required ng-model="homeCtrl.loginData.email" placeholder="email" />
+            </label>
+            <label class="item item-input">
+              <input type="password" required ng-model="homeCtrl.loginData.password" placeholder="password"/>
+            </label>
+            <label class="item">
+              <button class="button button-block button-positive" type="submit">Log in</button>
+            </label>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+
+
+
+
+    <div class="card userLRCard">
+      <div class="item item-divider formDividerTitle">
+        Register Here
+      </div>
+      <div class="item item-text-wrap">
+
+        <form ng-submit="homeCtrl.register()">
+          <div class="list list-inset">
+            <label class="item item-input">
+              <input type="text" required ng-model="homeCtrl.registerData.firstName" placeholder="firstname" />
+            </label>
+            <label class="item item-input">
+              <input type="text" required ng-model="homeCtrl.registerData.lastName" placeholder="lastname" />
+            </label>
+            <label class="item item-input">
+              <input type="email" required ng-model="homeCtrl.registerData.email" placeholder="email" />
+            </label>
+            <label class="item item-input">
+              <input type="password" required ng-model="homeCtrl.registerData.password" placeholder="password"/>
+            </label>
+            <label class="item">
+              <button class="button button-block button-positive" type="submit">Register</button>
+            </label>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+
+
+  </ion-content>
+</ion-modal-view>

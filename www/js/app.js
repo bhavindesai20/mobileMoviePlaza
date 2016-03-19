@@ -1,7 +1,7 @@
 (function(){
 
   'use strict';
-  angular.module('mmPlaza', ['ionic','ui.bootstrap'])
+  angular.module('mmPlaza', ['ionic'])
 
     .run(function($ionicPlatform) {
       $ionicPlatform.ready(function() {
@@ -27,7 +27,7 @@
         url: '/app',
         abstract: true,
         templateUrl: 'templates/menu.tmpl.html',
-        controller: 'HomeController'
+        controller: 'HomeController as homeCtrl'
       })
       .state('app.titles', {
         url: '/titles',

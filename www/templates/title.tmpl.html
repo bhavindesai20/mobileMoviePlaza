@@ -10,21 +10,34 @@
       <div class="item item-body">
         <img class="full-image" ng-src="{{titleCtrl.title.poster}}"/>
         <p>{{titleCtrl.title.plot}}</p>
-        <p>
-          <strong>MovieFliX Rating: </strong>
-          <uib-rating ng-model="titleCtrl.rate" max="5" read-only="true"></uib-rating>
-        </p>
       </div>
-
     </div>
 
 
+    <!-- Add Comment -->
+    <div class="card commentCard">
+      <div class="item item-divider formDividerTitle">
+         Add Comment
+      </div>
+      <div class="item item-text-wrap">
+        <form ng-submit="titleCtrl.addComment()">
+          <div class="list list-inset">
+            <label class="item item-input">
+              <input type="text" required ng-model="titleCtrl.comment.comments" placeholder="Your Comment" />
+            </label>
+            <label class="item">
+              <button class="button button-block button-positive" ng-disabled="!isValidUser()" type="submit">Add Comment</button>
+            </label>
+          </div>
+        </form>
 
+      </div>
+    </div>
 
 
     <!-- comments -->
     <div class="titleComments">
-      <div class="card" ng-repeat="comment in titleCtrl.setComments">
+      <div class="card" ng-repeat="comment in titleCtrl.setComments | orderBy:'-id'">
         <div class="item item-divider">
           <i class="ion-person"></i> {{comment.user.firstName}}
         </div>

@@ -34,4 +34,14 @@
   padding-right: 10px;
 }
 
+.formDividerTitle{
+  color:#fff;
+  background-color: #387ef5;
+}
+
+.userLRCard{
+  width:80%;
+  margin:20px auto;
+}
+
 

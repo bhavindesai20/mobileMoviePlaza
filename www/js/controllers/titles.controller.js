@@ -12,10 +12,11 @@
     titlesCtrl.numberOfItemsToDisplay=10;
 
     titlesCtrl.addMoreItem = function(){
-      console.log('I called');
-      if(titlesCtrl.titles.length > titlesCtrl.numberOfItemsToDisplay){
-          titlesCtrl.numberOfItemsToDisplay+=10;
-          $scope.$broadcast('scroll.infiniteScrollComplete');
+      if(titlesCtrl.titles){
+        if(titlesCtrl.titles.length > titlesCtrl.numberOfItemsToDisplay){
+            titlesCtrl.numberOfItemsToDisplay+=10;
+            $scope.$broadcast('scroll.infiniteScrollComplete');
+        }
       }
     };
 
@@ -27,15 +28,6 @@
       }
       return true;
     };
-
-
-
-    $scope.addMoreItem = function(done) {
-
-      if ($scope.items.length > $scope.numberOfItemsToDisplay)
-        $scope.numberOfItemsToDisplay += 20; // load 5 more items
-      done(); // need to call this when finish loading more data
-    }
 
 
     titlesCtrl.setTitle = function(id){
